@@ -28,8 +28,6 @@ tests/           单元测试
 - `VisDrone_Experiments/`
 - `models/`
 - `*.pt`、`*.pth`、`*.onnx`、`*.engine`
-- `党建材料/`
-- `无人机材料/`
 
 默认数据目录约定为：
 
