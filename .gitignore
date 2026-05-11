@@ -1,1 +1,4 @@
 .worktrees/
+datasets/Visdrone/VisDrone2019-DET-train-tile*-*/
+VisDrone_Experiments/sliced_eval/
+VisDrone_Experiments/tile768_mix_smoke_*/
