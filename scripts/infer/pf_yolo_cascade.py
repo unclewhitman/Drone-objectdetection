@@ -119,9 +119,10 @@ def evaluate_cascade(pf_cfg, pf_ckpt, yolo_cls_path, data_dir, test_json_path, s
     os.remove(dt_path)
 
 if __name__ == "__main__":
-    pf_cfg = "PF-RPN-main/configs/pf-rpn/visdrone.py"
+    pf_root = Path("third_party") / "PF-RPN-main"
+    pf_cfg = str(pf_root / "configs" / "pf-rpn" / "visdrone.py")
     # User interrupted training, let's use the pre-trained universal PF-RPN weights which has strong zero-shot capability!
-    pf_ckpt = "PF-RPN-main/checkpoints/pf_rpn_swinb_5p_coco_imagenet.pth"
+    pf_ckpt = str(pf_root / "checkpoints" / "pf_rpn_swinb_5p_coco_imagenet.pth")
     base_exp_dir = Path("VisDrone_Experiments")
     cls_exps = list(base_exp_dir.glob("yolo11n_cls_baseline*"))
     if not cls_exps:

@@ -1,10 +1,19 @@
 import os
 import json
 from pathlib import Path
+import sys
 from pycocotools.coco import COCO
 from pycocotools.cocoeval import COCOeval
 from ultralytics import YOLO
 from tqdm import tqdm
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from scripts.common.paths import resolve_pretrained
+
 
 def eval_class_agnostic(model_path, data_dir, test_json_path, split="VisDrone2019-DET-test-dev"):
     print(f"Loading COCO Ground Truth from {test_json_path}...")
@@ -62,7 +71,7 @@ if __name__ == "__main__":
     model_path = "VisDrone_Experiments/yolo11n_baseline/weights/best.pt"
     # If the user has a specific model, change it here, for instance 'yolo11n.pt'
     if not os.path.exists(model_path):
-        model_path = "yolo11n.pt"  # Fallback
+        model_path = resolve_pretrained("yolo11n.pt")  # Fallback
         
     base_dir = "datasets/Visdrone"
     test_json = os.path.join(base_dir, "VisDrone2019-DET-test-dev", "annotations", "test_coco_single.json")

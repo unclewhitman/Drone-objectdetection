@@ -1,8 +1,17 @@
 from ultralytics import YOLO
+from pathlib import Path
+import sys
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from scripts.common.paths import resolve_pretrained
 
 def main():
     # 1. Load YOLOv11 nano classification model
-    model = YOLO("yolo11n-cls.pt")
+    model = YOLO(resolve_pretrained("yolo11n-cls.pt"))
 
     # 2. Train model
     print("开始训练 YOLO11 分类模型...")

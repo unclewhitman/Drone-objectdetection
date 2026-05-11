@@ -12,6 +12,7 @@ __pycache__/
 /datasets/
 /VisDrone_Experiments/
 /models/
+/materials/papers/
 *.pt
 *.pth
 *.onnx

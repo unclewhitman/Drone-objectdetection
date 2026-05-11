@@ -8,9 +8,10 @@
 configs/
   datasets/      数据集 YAML 配置
   models/        YOLO 模型结构 YAML
-docs/
+materials/
   plans/         实验设计和迭代方案
   reports/       实验结果报告
+  papers/        本地论文资料，不进入 Git
 scripts/
   common/        通用几何、切片等工具函数
   data/          数据集转换、增强、tile 数据生成
@@ -27,7 +28,16 @@ tests/           单元测试
 - `datasets/`、`dataset/`
 - `VisDrone_Experiments/`
 - `models/`
+- `materials/papers/`
 - `*.pt`、`*.pth`、`*.onnx`、`*.engine`
+
+预训练权重如果本地已有，建议放在：
+
+```text
+models/pretrained/
+  yolo11n.pt
+  yolo11n-cls.pt
+```
 
 默认数据目录约定为：
 
@@ -79,5 +89,5 @@ sliced inference 评估：
 详细实验结论见：
 
 ```text
-docs/reports/visdrone-sliced-inference-and-tile-training-report.md
+materials/reports/visdrone-sliced-inference-and-tile-training-report.md
 ```

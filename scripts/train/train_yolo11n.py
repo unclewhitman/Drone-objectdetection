@@ -1,10 +1,20 @@
+from pathlib import Path
+import sys
+
 from ultralytics import YOLO
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+from scripts.common.paths import resolve_pretrained
 
 
 def main():
     # 1. 加载最小参数量的 YOLOv11 Nano 模型
     # 如果本地没有 yolo11n.pt，它会自动从官方下载
-    model = YOLO("yolo11n.pt")
+    model = YOLO(resolve_pretrained("yolo11n.pt"))
 
     # 2. 模型训练 (加入了资源优化参数)
     print("开始训练...")
