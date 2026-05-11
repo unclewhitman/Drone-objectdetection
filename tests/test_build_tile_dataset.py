@@ -2,11 +2,11 @@ import os
 import sys
 import unittest
 
-SCRIPTS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scripts"))
-if SCRIPTS_DIR not in sys.path:
-    sys.path.insert(0, SCRIPTS_DIR)
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
-from build_tile_dataset import clip_labels_to_tile
+from scripts.data.build_tile_dataset import clip_labels_to_tile
 
 
 class BuildTileDatasetTest(unittest.TestCase):

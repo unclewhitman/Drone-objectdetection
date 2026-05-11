@@ -4,11 +4,12 @@ import unittest
 
 import numpy as np
 
-SCRIPTS_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "scripts"))
-if SCRIPTS_DIR not in sys.path:
-    sys.path.insert(0, SCRIPTS_DIR)
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, PROJECT_ROOT)
 
-from sliced_yolo_eval import class_aware_nms, generate_slices, match_predictions
+from scripts.common.tiling import generate_slices
+from scripts.eval.sliced_yolo_eval import class_aware_nms, match_predictions
 
 
 class SlicedYoloEvalTest(unittest.TestCase):

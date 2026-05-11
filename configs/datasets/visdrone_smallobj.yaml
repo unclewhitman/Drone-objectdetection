@@ -1,6 +1,6 @@
-# visdrone_tile768_mix.yaml
-path: E:/MyCodeRepo/Defect_detection_powerline/datasets/Visdrone
-train: VisDrone2019-DET-train-tile768-mix/images
+﻿# visdrone_smallobj.yaml
+path: ../../datasets/Visdrone
+train: VisDrone2019-DET-train-aug/images
 val: VisDrone2019-DET-val/images
 test: VisDrone2019-DET-test-dev/images
 nc: 10

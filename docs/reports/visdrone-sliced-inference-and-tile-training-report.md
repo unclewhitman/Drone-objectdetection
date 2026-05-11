@@ -33,7 +33,7 @@ VisDrone_Experiments/yolo11n_p2_C3TR_sobj_stage2_B2/weights/best.pt
 新增脚本：
 
 ```text
-scripts/sliced_yolo_eval.py
+scripts/eval/sliced_yolo_eval.py
 ```
 
 这个脚本支持两种模式：
@@ -143,7 +143,7 @@ sliced 1536 mAP50-95: 0.2511
 新增 tile 数据集生成脚本：
 
 ```text
-scripts/build_tile_dataset.py
+scripts/data/build_tile_dataset.py
 ```
 
 生成的数据集：
@@ -161,7 +161,7 @@ datasets/Visdrone/VisDrone2019-DET-train-tile768-mix
 对应数据集配置：
 
 ```text
-visdrone_tile768_mix.yaml
+configs/datasets/visdrone_tile768_mix.yaml
 ```
 
 生成参数：
@@ -188,7 +188,7 @@ keep_original=True
 
 ```text
 weights=VisDrone_Experiments/yolo11n_p2_C3TR_sobj_stage2_B2/weights/best.pt
-data=visdrone_tile768_mix.yaml
+data=configs/datasets/visdrone_tile768_mix.yaml
 epochs=1
 fraction=0.02
 imgsz=768
@@ -224,7 +224,7 @@ VisDrone_Experiments/tile768_mix_smoke_e1_frac002_fixpath
 当前建议把 `Stage2-B best.pt` 配合 sliced1536 作为最强推理 baseline：
 
 ```powershell
-& E:\Anaconda3\envs\yolov11\python.exe scripts\sliced_yolo_eval.py `
+& E:\Anaconda3\envs\yolov11\python.exe scripts\eval\sliced_yolo_eval.py `
   --mode sliced `
   --weights VisDrone_Experiments\yolo11n_p2_C3TR_sobj_stage2_B2\weights\best.pt `
   --output-dir VisDrone_Experiments\sliced_eval `
@@ -244,7 +244,7 @@ VisDrone_Experiments/tile768_mix_smoke_e1_frac002_fixpath
 
 ```text
 weights: Stage2-B best.pt
-data: visdrone_tile768_mix.yaml
+data: configs/datasets/visdrone_tile768_mix.yaml
 imgsz: 768
 batch: 2
 epochs: 10-20

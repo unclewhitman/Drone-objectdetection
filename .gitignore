@@ -1,4 +1,29 @@
-.worktrees/
-datasets/Visdrone/VisDrone2019-DET-train-tile*-*/
-VisDrone_Experiments/sliced_eval/
-VisDrone_Experiments/tile768_mix_smoke_*/
+/.worktrees/
+/.agents/
+/.gemini/
+
+# Python/cache artifacts
+__pycache__/
+*.py[cod]
+*.cache
+
+# Local datasets, generated experiments, and model weights
+/dataset/
+/datasets/
+/VisDrone_Experiments/
+/models/
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Large third-party/reference folders kept local
+/PF-RPN-main/
+/third_party/
+/everything-claude-code/
+/papers/
+/temp_docx/
+
+# User material folders that must not be uploaded
+/党建材料/
+/无人机材料/
